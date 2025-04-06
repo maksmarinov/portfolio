@@ -108,7 +108,7 @@ export default function Home() {
       className={`min-h-screen relative overflow-auto ${
         theme === "dark"
           ? `h-screen bg-gradient-to-b from-black via-blue-900 to-black`
-          : `h-screen bg-gradient-to-b from-violet-400 via-neutral-300 to-neutral-200`
+          : `h-screen bg-gradient-to-b from-violet-300 via-neutral-400 to-neutral-300`
       }`}
     >
       {mounted && (

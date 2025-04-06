@@ -27,7 +27,7 @@ export const Bio = () => {
         </div>
         <div className="border-4 rounded-4xl p-2 m-2">
           <Image
-            className="rounded-3xl mask-at-bottom mask-radial-from-60%"
+            className="rounded-3xl"
             src="/Untitled.jpeg"
             alt="personal pic"
             width={100}

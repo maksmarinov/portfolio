@@ -57,7 +57,7 @@ export const Projects = () => {
   const [viewMode, setViewMode] = useState<"list" | "tile">("list");
 
   return (
-    <section className="container mx-auto py-4">
+    <section className="container mx-auto py-4 max-h-120">
       <div className="flex justify-between items-center mb-6 ">
         <h2 className="text-2xl font-bold text-shadow-lg">My Projects</h2>
         <div className="flex items-center space-x-2 border border-neutral-300/30 rounded-md p-1 bg-slate-900/60 backdrop-blur-sm">

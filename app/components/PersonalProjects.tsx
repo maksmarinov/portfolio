@@ -39,7 +39,7 @@ const prjs = [
     description:
       "A vanilla JS/CSS copy project of the popular game. It was a good way to checkout working with API and getting and posting data to server.",
     image: "/wordle.png",
-    link: "https://maksmarinov.github.io/wordle/",
+    link: "https://wordle-maksmarinovs-projects.vercel.app/",
     git: "https://github.com/maksmarinov/wordle",
   },
   {
@@ -47,7 +47,7 @@ const prjs = [
     title: "Calculator",
     description:
       "A vanilla JS calc, my first webapp, the funcionality is okay, I do revisit it from time to time to see if I can improve something if it needs to be improved. And something can always be improved!",
-    image: "",
+    image: "/calc.png",
     link: "https://maksmarinov.github.io/calc/",
     git: "https://github.com/maksmarinov/calc",
   },

@@ -91,11 +91,11 @@ export const Projects = () => {
           {prjs.map((prj) => (
             <div
               key={prj.id}
-              className={`group relative overflow-hidden min-h-80 bg-slate-800/50  rounded-lg shadow-lg border border-violet-400/20 transition-all duration-1000 
+              className={`group relative overflow-hidden touch-none min-h-80 bg-slate-800/50  rounded-lg shadow-lg border border-violet-400/20 transition-all duration-1000 
                hover:border-violet-400/40 hover:shadow-violet-500/40   active:border-violet-400/60 active:shadow-xl active:shadow-violet-500/50 
               ${
                 viewMode === "list"
-                  ? "transform -translate-x-10 hover:translate-x-0  active:border-violet-400/60 active:translate-x-0 "
+                  ? "transform -translate-x-10 hover:translate-x-0 active:translate-x-0 "
                   : ""
               }  hover:shadow-xl  `}
             >

@@ -107,13 +107,15 @@ export const Projects = () => {
                     viewMode === "list" ? "w-2/5" : "w-full"
                   } relative`}
                 >
-                  <Image
-                    src={prj.image || "/placeholder.jpg"}
-                    alt={prj.title}
-                    width={800}
-                    height={600}
-                    className="object-cover h-full w-full rounded"
-                  />
+                  <Link href={prj.link} className="cursor-pointer">
+                    <Image
+                      src={prj.image || "/placeholder.jpg"}
+                      alt={prj.title}
+                      width={800}
+                      height={600}
+                      className="object-cover h-full w-full rounded"
+                    ></Image>
+                  </Link>
                 </div>
                 <div
                   className={`${

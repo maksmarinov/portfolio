@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
@@ -19,7 +20,7 @@ const prjs = [
     title: "AIChatbot",
     description:
       "A chatbot using GPT-4o api and lowdb for local session storage and context. Considering to evolve into an AI Agent in near future, since currently it does not posses any tools. But I think AI is great personally, although as a junior dev I am at competition with AI for my job, it has also been very helpful in studying, looking up information, providing suggestions and boilerplate code",
-    image: "/atdappscr.png",
+    image: "/aichat.png",
     link: "https://aigent-beta.vercel.app/",
     git: "https://github.com/maksmarinov/aigent",
   },
@@ -28,7 +29,7 @@ const prjs = [
     title: "WordleV2",
     description:
       "A revised version V2 of the project below, main objective was to get familiar with React, and try to use different tools like useState and useEffect",
-    image: "/atdappscr.png",
+    image: "/wordlereact.png",
     link: "https://wordlereact.vercel.app/",
     git: "https://github.com/maksmarinov/wordlereact",
   },
@@ -37,7 +38,7 @@ const prjs = [
     title: "WordleV1",
     description:
       "A vanilla JS/CSS copy project of the popular game. It was a good way to checkout working with API and getting and posting data to server.",
-    image: "/atdappscr.png",
+    image: "/wordle.png",
     link: "https://maksmarinov.github.io/wordle/",
     git: "https://github.com/maksmarinov/wordle",
   },
@@ -46,7 +47,7 @@ const prjs = [
     title: "Calculator",
     description:
       "A vanilla JS calc, my first webapp, the funcionality is okay, I do revisit it from time to time to see if I can improve something if it needs to be improved. And something can always be improved!",
-    image: "/atdappscr.png",
+    image: "",
     link: "https://maksmarinov.github.io/calc/",
     git: "https://github.com/maksmarinov/calc",
   },
@@ -107,7 +108,7 @@ export const Projects = () => {
                   } relative`}
                 >
                   <Image
-                    src={prj.image || "/placeholder.svg"}
+                    src={prj.image || "/placeholder.jpg"}
                     alt={prj.title}
                     width={800}
                     height={600}

@@ -10,7 +10,7 @@ const prjs = [
     id: "1",
     title: "Atdapp",
     description:
-      "Just Another To Do application. It is a basic CRUD app with authentication, task creation/manipulation. The app uses a serverless PostgreSQL for RDBMS and Prisma for ORM. THE TWIST is that it has a Game built in - Bulls&Cows. A simple game of numbers that I personally really enjoy and since I have no friends to play it with, now I have a bot.",
+      "Just Another To Do application. It is a basic CRUD app with authentication, task creation/manipulation. The app uses a serverless PostgreSQL for RDBMS and Prisma for ORM. THE TWIST is that it has a Game built in - Bulls&Cows.",
     image: "/atdappscr.png",
     link: "https://atdapp.vercel.app/",
     git: "https://github.com/maksmarinov/atdapp",
@@ -19,7 +19,7 @@ const prjs = [
     id: "2",
     title: "AIChatbot",
     description:
-      "A chatbot using GPT-4o api and lowdb for local session storage and context. Considering to evolve into an AI Agent in near future.",
+      "A chatbot using GPT-4o api and lowdb for local session storage and context. Considering to evolve it into an AI Agent in the near future. Currently it poses no tools, only chat with context.",
     image: "/aichat.png",
     link: "https://aigent-beta.vercel.app/",
     git: "https://github.com/maksmarinov/aigent",
@@ -28,7 +28,7 @@ const prjs = [
     id: "3",
     title: "WordleV2",
     description:
-      "A revised version V2 of the project below, main objective was to get familiar with React, and try to use different tools like useState and useEffect",
+      "A revised version V2 of the project below, main objective was to get familiar with React, and try to use different tools like useState and useEffect. The colorway is Mecha inspired.",
     image: "/wordlereact.png",
     link: "https://wordlereact.vercel.app/",
     git: "https://github.com/maksmarinov/wordlereact",
@@ -37,7 +37,7 @@ const prjs = [
     id: "4",
     title: "WordleV1",
     description:
-      "A vanilla JS/CSS copy project of the popular game. It was a good way to checkout working with API and getting and posting data to server.",
+      "A vanilla JS/CSS copy project of the popular game. It was a good way to checkout working with API and getting and posting data to server. This game definetly uped my knowledge of English words I am highly unlikely to use.",
     image: "/wordle.png",
     link: "https://wordle-maksmarinovs-projects.vercel.app/",
     git: "https://github.com/maksmarinov/wordle",
@@ -46,7 +46,7 @@ const prjs = [
     id: "5",
     title: "Calculator",
     description:
-      "A vanilla JS calc, my first webapp, the funcionality is okay, I do revisit it from time to time to see if I can improve something if it needs to be improved. And something can always be improved!",
+      "A vanilla JS calc, my first webapp, the funcionality is okay, I do revisit it from time to time to see if I can improve something if it needs to be improved. It was a intro course project, as in every course project I went a bit the extramile.",
     image: "/calc.png",
     link: "https://maksmarinov.github.io/calc/",
     git: "https://github.com/maksmarinov/calc",
@@ -95,7 +95,7 @@ export const Projects = () => {
                hover:border-violet-400/40 hover:shadow-violet-500/40   ative:border-violet-400/60 active:shadow-xl active:shadow-violet-500/50 
               ${
                 viewMode === "list"
-                  ? "transform -translate-x-10 hover:translate-x-0 active:translate-x-0 "
+                  ? "transform -translate-x-10 hover:translate-x-0 active:translate-x-0 transition-all duration-1000 "
                   : ""
               }  hover:shadow-xl  `}
               style={{
@@ -120,7 +120,7 @@ export const Projects = () => {
                       alt={prj.title}
                       width={800}
                       height={600}
-                      className="object-cover h-full w-full rounded"
+                      className="object-cover h-full w-full rounded hover:min-h-80 transition-all duration-1000"
                     ></Image>
                   </Link>
                 </div>
@@ -135,7 +135,7 @@ export const Projects = () => {
                     </h3>
                   </div>
                   <div className="relative overflow-hidden m-2 ">
-                    <p className="font-mono mb-4 text-sm line-clamp-3 group-hover:line-clamp-none transition-all duration-300 ">
+                    <p className="font-mono mb-4 text-sm line-clamp-3 group-hover:line-clamp-none transition-all duration-1000 ">
                       {prj.description}
                     </p>
                   </div>

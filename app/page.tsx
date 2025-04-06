@@ -7,9 +7,8 @@ import { Projects } from "./components/PersonalProjects";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [theme, setTheme] = useState<"dark" | "light">(
-    Cookies.get("theme") as "dark" | "light"
-  );
+  // Initialize with a default value instead of reading cookies directly
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [mounted, setMounted] = useState(false);
 
   function getRandomIntInclusive(min: number, max: number): number {
@@ -45,7 +44,7 @@ export default function Home() {
     }[] = [];
     for (let i = 0; i < 150; i++) {
       stars.push({
-        x: Math.random() * canvas.width,
+        x: Math.random() * canvas.width * 2,
         y: Math.random() * canvas.height,
         radius: Math.random() * 1.25,
         speed: Math.random() * 0.02,
@@ -87,53 +86,56 @@ export default function Home() {
       window.removeEventListener("resize", resizeCanvas);
     };
   }, [theme]);
+
+  // Keep just one useEffect for theme initialization
   useEffect(() => {
     const savedTheme = Cookies.get("theme") as "dark" | "light";
     if (savedTheme) {
       setTheme(savedTheme);
-    } else {
-      setTheme("dark");
     }
     setMounted(true);
   }, []);
+
   const handleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     Cookies.set("theme", newTheme, { expires: 365 });
   };
-  return (
-    <main className="min-h-screen overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
+  return (
+    <main
+      className={`min-h-screen relative overflow-auto ${
+        theme === "dark"
+          ? `h-screen bg-gradient-to-b from-black via-blue-900 to-black`
+          : `h-screen bg-gradient-to-b from-violet-400 via-neutral-300 to-neutral-200`
+      }`}
+    >
       {mounted && (
-        <>
+        <div className="flex relative p-2">
           <button
             className="absolute z-50 m-4 bg-black/20 hover:bg-gray-700/80 rounded p-1"
             onClick={handleTheme}
           >
             {theme === "dark" ? <MoonIcon /> : <SunIcon />}
           </button>
-          <div
-            className={`${
-              theme === "dark"
-                ? `h-screen bg-linear-to-b from-black via-blue-900 to-black`
-                : `h-screen bg-linear-to-b from-violet-400 via-neutral-300 to-neutral-200`
-            }`}
-          ></div>
-        </>
-      )}
-      <div className="absolute z-20 inset-4 mt-2">
-        <div className="flex flex-col overflow-auto ">
-          <Bio />
-          <Projects />
         </div>
+      )}
+      <canvas ref={canvasRef} className="fixed inset-0 z-0" />
+
+      <div className="relative z-10">
+        <header className="container mx-auto">
+          <Bio />
+        </header>
+        <section className="container mx-auto py-8">
+          <Projects />
+        </section>
+        <footer className="container rounded-2xl mx-auto py-8 border-t border-purple-500/20">
+          <p className="text-center text-purple-800">
+            {new Date().getFullYear()} Maks. Exploring the digital universe.
+          </p>
+        </footer>
       </div>
-      <footer className=" w-full inset-0 bg-black py-8 border-t border-purple-500/20">
-        <p className="text-center text-purple-300">
-          {new Date().getFullYear()} Maks. Exploring the digital universe.
-        </p>
-      </footer>
     </main>
   );
 }

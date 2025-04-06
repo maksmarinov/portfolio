@@ -4,26 +4,28 @@ import Link from "next/link";
 
 export const Bio = () => {
   return (
-    <div className="mb-10">
+    <div>
       <div className="flex flex-row justify-between items-end">
-        <h1 className="mb-4 font-extrabold text-4xl text-shadow-md">
-          About me
-        </h1>
-        <div className="flex flex-row">
-          <Link
-            className="font-extrabold m-2 underline"
-            href="https://www.linkedin.com/in/maksim-marinov-694b3853/"
-          >
-            LinkedIn
-          </Link>
-          <Link
-            className="font-extrabold m-2 underline"
-            href="https://github.com/maksmarinov"
-          >
-            Git
-          </Link>
+        <div className="flex flex-col">
+          <h1 className=" font-extrabold text-2xl p-2 text-shadow-md">
+            About me
+          </h1>
+          <div className="flex flex-row">
+            <Link
+              className="font-extrabold m-2 underline"
+              href="https://www.linkedin.com/in/maksim-marinov-694b3853/"
+            >
+              LinkedIn
+            </Link>
+            <Link
+              className="font-extrabold m-2 underline"
+              href="https://github.com/maksmarinov"
+            >
+              Git
+            </Link>
+          </div>
         </div>
-        <div className="border-4 rounded-4xl p-2">
+        <div className="border-4 rounded-4xl p-2 m-2">
           <Image
             className="rounded-3xl mask-at-bottom mask-radial-from-60%"
             src="/Untitled.jpeg"
@@ -33,8 +35,8 @@ export const Bio = () => {
           />
         </div>
       </div>
-      <div className="bg-black/20 rounded-xl line-clamp-4 p-4 mt-4 font-bold text-shadow-md/20 overflow-auto">
-        <p className="">
+      <div className="bg-black/20 max-h-40 rounded-lg relative overflow-auto m-2">
+        <p id="bio">
           Welcome! I&apos;m Maks, a Junior Web Developer focused on building
           clean, user-friendly web applications. With a toolkit including HTML,
           CSS, JavaScript, React, Next.js, Tailwind, Node.js, and SQL, I strive

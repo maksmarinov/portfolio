@@ -36,7 +36,7 @@ export const Bio = () => {
         </div>
       </div>
       <div className="bg-black/20 max-h-40 rounded-lg relative overflow-auto m-2">
-        <p id="bio">
+        <p className="m-2" id="bio">
           Welcome! I&apos;m Maks, a Junior Web Developer focused on building
           clean, user-friendly web applications. With a toolkit including HTML,
           CSS, JavaScript, React, Next.js, Tailwind, Node.js, and SQL, I strive

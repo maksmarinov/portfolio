@@ -92,12 +92,12 @@ export const Projects = () => {
             <div
               key={prj.id}
               className={`group relative overflow-hidden min-h-80 bg-slate-800/50  rounded-lg shadow-lg border border-violet-400/20 transition-all duration-1000 
-               hover:border-violet-400/40 hover:shadow-violet-500/40
+               hover:border-violet-400/40 hover:shadow-violet-500/40   active:border-violet-400/60 active:shadow-xl active:shadow-violet-500/50 
               ${
                 viewMode === "list"
-                  ? "transform -translate-x-10 hover:translate-x-0 "
+                  ? "transform -translate-x-10 hover:translate-x-0  active:border-violet-400/60 active:translate-x-0 "
                   : ""
-              }  hover:shadow-xl`}
+              }  hover:shadow-xl  `}
             >
               <div
                 className={`flex  ${
@@ -130,7 +130,11 @@ export const Projects = () => {
                     </h3>
                   </div>
                   <div className="relative overflow-hidden m-2 ">
-                    <p className="font-mono mb-4 text-sm line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                    <p
+                      className="font-mono mb-4 text-sm line-clamp-3 group-hover:line-clamp-none transition-all duration-300 focus-within:line-clamp-none
+  group-focus-within:line-clamp-none
+  group-active:line-clamp-none "
+                    >
                       {prj.description}
                     </p>
                   </div>

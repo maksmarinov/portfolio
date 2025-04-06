@@ -91,6 +91,8 @@ export default function Home() {
     const savedTheme = Cookies.get("theme") as "dark" | "light";
     if (savedTheme) {
       setTheme(savedTheme);
+    } else {
+      setTheme("dark");
     }
     setMounted(true);
   }, []);

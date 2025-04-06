@@ -10,7 +10,7 @@ const prjs = [
     id: "1",
     title: "Atdapp",
     description:
-      "Just Another To Do application. It is a basic CRUD app with authentication, task creation and a game. The app uses a serverless PostgreSQL for RDBMS and Prisma for ORM. THE TWIST is that it has a Game built in - Bulls&Cows. A simple game of numbers that I personally really enjoy.",
+      "Just Another To Do application. It is a basic CRUD app with authentication, task creation/manipulation. The app uses a serverless PostgreSQL for RDBMS and Prisma for ORM. THE TWIST is that it has a Game built in - Bulls&Cows. A simple game of numbers that I personally really enjoy and since I have no friends to play it with, now I have a bot.",
     image: "/atdappscr.png",
     link: "https://atdapp.vercel.app/",
     git: "https://github.com/maksmarinov/atdapp",
@@ -19,7 +19,7 @@ const prjs = [
     id: "2",
     title: "AIChatbot",
     description:
-      "A chatbot using GPT-4o api and lowdb for local session storage and context. Considering to evolve into an AI Agent in near future, since currently it does not posses any tools. But I think AI is great personally, although as a junior dev I am at competition with AI for my job, it has also been very helpful in studying, looking up information, providing suggestions and boilerplate code",
+      "A chatbot using GPT-4o api and lowdb for local session storage and context. Considering to evolve into an AI Agent in near future.",
     image: "/aichat.png",
     link: "https://aigent-beta.vercel.app/",
     git: "https://github.com/maksmarinov/aigent",
@@ -80,7 +80,7 @@ export const Projects = () => {
         </div>
       </div>
 
-      <div className="m-4 overflow-auto max-h-120 mask-y-from-92% mask-y-to-100% ">
+      <div className="m-4 overflow-auto p-4 min-h-120 max-h-140 mask-y-from-95% mask-y-to-100% ">
         <div
           className={`grid gap-6  ${
             viewMode === "tile"
@@ -91,11 +91,13 @@ export const Projects = () => {
           {prjs.map((prj) => (
             <div
               key={prj.id}
-              className={`group relative overflow-hidden min-h-80 bg-slate-800/50  rounded-lg shadow-lg border border-violet-400/20 transition-all duration-1000 hover:border-cyan-400/40 ${
+              className={`group relative overflow-hidden min-h-80 bg-slate-800/50  rounded-lg shadow-lg border border-violet-400/20 transition-all duration-1000 
+               hover:border-violet-400/40 hover:shadow-violet-500/40
+              ${
                 viewMode === "list"
                   ? "transform -translate-x-10 hover:translate-x-0 "
                   : ""
-              } hover:shadow-cyan-500/20 hover:shadow-xl`}
+              }  hover:shadow-xl`}
             >
               <div
                 className={`flex  ${
@@ -128,7 +130,7 @@ export const Projects = () => {
                     </h3>
                   </div>
                   <div className="relative overflow-hidden m-2 ">
-                    <p className="font-mono mb-4 line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                    <p className="font-mono mb-4 text-sm line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
                       {prj.description}
                     </p>
                   </div>

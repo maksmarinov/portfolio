@@ -25,18 +25,18 @@ export const Bio = () => {
             </Link>
           </div>
         </div>
-        <div className="border-4 rounded-4xl p-2 m-2">
+        <div className="border-2 rounded-4xl p-2 m-2">
           <Image
             className="rounded-3xl"
             src="/Untitled.jpeg"
             alt="personal pic"
-            width={100}
-            height={100}
+            width={50}
+            height={50}
           />
         </div>
       </div>
-      <div className="bg-black/20 max-h-40 rounded-lg relative overflow-auto m-2">
-        <p className="m-2" id="bio">
+      <div className="bg-black/20 max-h-24 overflow-auto m-2 rounded-lg ">
+        <p className="m-2 text-sm " id="bio">
           Welcome! I&apos;m Maks, a Junior Web Developer focused on building
           clean, user-friendly web applications. With a toolkit including HTML,
           CSS, JavaScript, React, Next.js, Tailwind, Node.js, and SQL, I strive

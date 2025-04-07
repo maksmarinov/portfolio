@@ -55,15 +55,33 @@ const prjs = [
 
 export const Projects = () => {
   const [viewMode, setViewMode] = useState<"list" | "tile">("list");
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [announcement, setAnnouncement] = useState("");
+  const handleViewChange = (mode: "list" | "tile") => {
+    setViewMode(mode);
+    setAnnouncement(`View changed to ${mode} mode`);
+  };
+
+  const toggleDescription = (id: string) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
-    <section className="container mx-auto max-h-fit">
+    <section
+      aria-labelledby="projects-heading"
+      className="container mx-auto max-h-fit"
+    >
       <div className="flex justify-between px-4 items-center mb-4 ">
-        <h2 className="text-2xl font-bold text-shadow-lg">My Projects</h2>
+        <h2 id="projects-heading" className="text-2xl font-bold text-shadow-lg">
+          My Projects
+        </h2>
         <div className="flex items-center space-x-2 border border-neutral-300/30 rounded-md p-1 bg-slate-900/60 backdrop-blur-sm">
+          <div aria-live="polite" className="sr-only">
+            {announcement}
+          </div>
           <Toggle
             pressed={viewMode === "list"}
-            onPressedChange={() => setViewMode("list")}
+            onPressedChange={() => handleViewChange("list")}
             aria-label="List view"
             className="data-[state=on]:bg-neutral-800/60"
           >
@@ -71,7 +89,7 @@ export const Projects = () => {
           </Toggle>
           <Toggle
             pressed={viewMode === "tile"}
-            onPressedChange={() => setViewMode("tile")}
+            onPressedChange={() => handleViewChange("tile")}
             aria-label="Tile view"
             className="data-[state=on]:bg-neutral-800/60"
           >
@@ -91,6 +109,9 @@ export const Projects = () => {
           {prjs.map((prj) => (
             <div
               key={prj.id}
+              tabIndex={0}
+              role="article"
+              aria-labelledby={`project-title-${prj.title}`}
               className={`group relative overflow-hidden min-h-80 bg-slate-800/50  rounded-lg shadow-lg border border-violet-400/20 transition-all duration-1000 
                hover:border-violet-400/40 hover:shadow-violet-500/40   ative:border-violet-400/60 active:shadow-xl active:shadow-violet-500/50 
               ${
@@ -135,9 +156,20 @@ export const Projects = () => {
                     </h3>
                   </div>
                   <div className="relative overflow-hidden m-2 ">
-                    <p className="font-mono mb-4 text-sm line-clamp-3 group-hover:line-clamp-none transition-all duration-1000 ">
+                    <p
+                      className={`font-mono mb-4 text-sm transition-all duration-300 ${
+                        expandedId === prj.id ? "" : "line-clamp-3"
+                      } group-hover:line-clamp-none group-focus:line-clamp-none`}
+                    >
                       {prj.description}
                     </p>
+                    <button
+                      className="text-violet-300 text-xs md:hidden"
+                      onClick={() => toggleDescription(prj.id)}
+                      aria-expanded={expandedId === prj.id}
+                    >
+                      {expandedId === prj.id ? "Show less" : "Read more"}
+                    </button>
                   </div>
                   <div
                     className={`${
@@ -146,13 +178,13 @@ export const Projects = () => {
                   >
                     <Link
                       href={prj.link}
-                      className="underline font-bold bg-neutral-300/40 hover:bg-slate-900 shadow-white/40 hover:shadow-xl  hover:text-white m-2 px-4 max-w-min max-h-min rounded-sm text-black text-center "
+                      className="underline font-bold bg-neutral-300/40 hover:bg-slate-900 shadow-white/40 hover:shadow-xl  hover:text-white m-4 p-2 w-18 rounded-sm text-black text-center "
                     >
                       Link
                     </Link>
                     <Link
                       href={prj.git}
-                      className="underline font-bold bg-neutral-300/40 hover:bg-slate-900 shadow-white/40 hover:shadow-xl hover:text-white m-2 px-4 max-w-min max-h-min rounded-sm text-black text-center "
+                      className="underline font-bold bg-neutral-300/40 hover:bg-slate-900 shadow-white/40 hover:shadow-xl hover:text-white m-4 p-2 w-18 rounded-sm text-black text-center "
                     >
                       Git
                     </Link>

@@ -131,7 +131,7 @@ export default function Home() {
           <Projects />
         </section>
       </div>
-      <footer className="container h-20 rounded-2xl mx-auto py-8 border-t border-purple-500/20">
+      <footer className="container h-20 mx-auto py-8 border-t border-purple-500/20">
         <p className="text-center text-purple-800">
           {new Date().getFullYear()} Maks. Exploring the digital universe.
         </p>

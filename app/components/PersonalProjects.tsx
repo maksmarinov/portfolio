@@ -54,7 +54,7 @@ const prjs = [
 ];
 
 export const Projects = () => {
-  const [viewMode, setViewMode] = useState<"list" | "tile">("list");
+  const [viewMode, setViewMode] = useState<"list" | "tile">("tile");
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [announcement, setAnnouncement] = useState("");
   const handleViewChange = (mode: "list" | "tile") => {

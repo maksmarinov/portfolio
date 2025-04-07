@@ -57,7 +57,7 @@ export const Projects = () => {
   const [viewMode, setViewMode] = useState<"list" | "tile">("list");
 
   return (
-    <section className="container mx-auto max-h-180">
+    <section className="container mx-auto max-h-fit">
       <div className="flex justify-between px-4 items-center mb-4 ">
         <h2 className="text-2xl font-bold text-shadow-lg">My Projects</h2>
         <div className="flex items-center space-x-2 border border-neutral-300/30 rounded-md p-1 bg-slate-900/60 backdrop-blur-sm">
@@ -80,7 +80,7 @@ export const Projects = () => {
         </div>
       </div>
 
-      <div className="m-4 overflow-auto p-4 min-h-120 max-h-160 mask-y-from-95% mask-y-to-100% ">
+      <div className="m-4 overflow-auto p-4 min-h-120 max-h-screen mask-y-from-95% mask-y-to-100% ">
         <div
           className={`grid gap-6  ${
             viewMode === "tile"

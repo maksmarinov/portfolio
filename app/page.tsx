@@ -112,9 +112,9 @@ export default function Home() {
       }`}
     >
       {mounted && (
-        <div className="flex relative p-2">
+        <div className="flex inset-0 p-2">
           <button
-            className="absolute z-50 m-4 bg-black/20 hover:bg-gray-700/80 rounded p-1"
+            className="absolute z-50 bg-black/20 hover:bg-gray-700/80 rounded p-1"
             onClick={handleTheme}
           >
             {theme === "dark" ? <MoonIcon /> : <SunIcon />}
@@ -130,12 +130,12 @@ export default function Home() {
         <section className="container mx-auto py-8">
           <Projects />
         </section>
-        <footer className="container rounded-2xl mx-auto py-8 border-t border-purple-500/20">
-          <p className="text-center text-purple-800">
-            {new Date().getFullYear()} Maks. Exploring the digital universe.
-          </p>
-        </footer>
       </div>
+      <footer className="container h-20 rounded-2xl mx-auto py-8 border-t border-purple-500/20">
+        <p className="text-center text-purple-800">
+          {new Date().getFullYear()} Maks. Exploring the digital universe.
+        </p>
+      </footer>
     </main>
   );
 }

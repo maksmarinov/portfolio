@@ -180,13 +180,13 @@ export const Projects = () => {
                       href={prj.link}
                       className="underline font-bold bg-neutral-300/40 hover:bg-slate-900 shadow-white/40 hover:shadow-xl  hover:text-white m-4 p-2 w-18 rounded-sm text-black text-center "
                     >
-                      Link
+                      Visit webpage
                     </Link>
                     <Link
                       href={prj.git}
                       className="underline font-bold bg-neutral-300/40 hover:bg-slate-900 shadow-white/40 hover:shadow-xl hover:text-white m-4 p-2 w-18 rounded-sm text-black text-center "
                     >
-                      Git
+                      Git repo
                     </Link>
                   </div>
                 </div>

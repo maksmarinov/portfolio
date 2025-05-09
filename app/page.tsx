@@ -8,7 +8,7 @@ import { Projects } from "./components/PersonalProjects";
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   // Initialize with a default value instead of reading cookies directly
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   const [mounted, setMounted] = useState(false);
 
   function getRandomIntInclusive(min: number, max: number): number {
@@ -133,7 +133,7 @@ export default function Home() {
       </div>
       <footer className="container h-20 mx-auto py-8 border-t border-purple-500/20">
         <p className="text-center text-purple-800">
-          {new Date().getFullYear()} Maks. Exploring the digital universe.
+          {new Date().getFullYear()} Maks. Exploring the digital universe. ^-^
         </p>
       </footer>
     </main>

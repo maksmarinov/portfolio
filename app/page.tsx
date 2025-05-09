@@ -47,7 +47,7 @@ export default function Home() {
         x: Math.random() * canvas.width * 2,
         y: Math.random() * canvas.height,
         radius: Math.random() * 1.25,
-        speed: Math.random() * 0.125,
+        speed: Math.random() * 0.5,
         opacity: Math.random(),
         red: getRandomIntInclusive(0, 255),
         green: getRandomIntInclusive(0, 255),
